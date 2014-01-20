@@ -1,0 +1,68 @@
+% layout 'index';
+% title 'Perl_Advent_Summary';
+
+<div class="container"><!-- MARKETING LINE-->
+			<p class="lead ">
+				2010 ~ 2013 Seoulpm Perl Advent Calandar Summary Articles.
+			</p>
+                        <div class="row-fluid">
+                                <div class="well">
+                                        <div class="row-fluid">
+						<div class="span8">
+						<div class="span3">
+                                        % if ( $articles->{1}{year} eq '2013' ) {
+                                                <a class="btn btn-large btn-warning btn-block" href="/summary/2013">2013 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        % else {
+                                                <a class="btn btn-large btn-default btn-block" href="/summary/2013">2013 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        </div>
+                                        <div class="span3">
+                                        % if ( $articles->{1}{year} eq '2012' ) {
+                                                <a class="btn btn-large btn-warning btn-block" href="/summary/2012">2012 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        % else {
+                                                <a class="btn btn-large btn-default btn-block" href="/summary/2012">2012 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        </div>
+                                        <div class="span3">
+                                        % if ( $articles->{1}{year} eq '2011' ) {
+                                                <a class="btn btn-large btn-warning btn-block" href="/summary/2011">2011 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        % else {
+                                                <a class="btn btn-large btn-default btn-block" href="/summary/2011">2011 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        </div>
+                                        <div class="span3">
+                                        % if ( $articles->{1}{year} eq '2010' ) {
+                                                <a class="btn btn-large btn-warning btn-block" href="/summary/2010">2010 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        %else {
+                                                <a class="btn btn-large btn-default btn-block" href="/summary/2010">2010 Seoulpm Advent Canlandar</a>
+                                        %}
+                                        </div>
+                                        </div>
+                                </div>
+                        </div>
+		</div>
+	<!-- /MARKETING LINE-->
+
+% foreach my $id ( keys %$articles ) {
+<div class="panel-group" id="accordion">
+<div class="well">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+					<p><a href="<%= $articles->{$id}{url} %>">[<%= $articles->{$id}{title} %>] | <%= $articles->{$id}{author} %></a></p>
+				</a>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in">
+			<div class="panel-body">
+				<%= $articles->{$id}{abst} %>
+			</div>
+		</div>
+	</div>
+</div>
+%}
