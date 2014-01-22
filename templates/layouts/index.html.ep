@@ -10,11 +10,11 @@
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 		<link href="bootstrap/css/DT_bootstrap.css" rel="stylesheet">
-		<link href="css/stylish-portfolio.css" rel="stylesheet">
-		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="morris/lib/example.css">
-		<link rel="stylesheet" href="morris/lib/prettify.css">
-		<link rel="stylesheet" href="morris/morris.css">
+		<link href="stlish/css/stylish-portfolio.css" rel="stylesheet">
+		<link href="stlish/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="bootstrap/css/example.css">
+		<link rel="stylesheet" href="bootstrap/css/prettify.css">
+		<link rel="stylesheet" href="bootstrap/css/morris.css">
 
 		<style type="text/css">
 			body {
@@ -75,7 +75,7 @@
 		<%= content %>
 		<hr>
 		<footer>
-		<p>&copy; 2013 newbcode | Daum 
+		<p>&copy; 2014 newbcode | Daum 
 		<!-- hitwebcounter Code START -->
 		<a href="http://www.hitwebcounter.com/htmltutorial.php" target="_blank">
 			<img src="http://hitwebcounter.com/counter/counter.php?page=5242848&style=0007&nbdigits=5&type=page&initCount=0" title="stats for websites" Alt="stats for websites"   border="0" >
@@ -92,10 +92,11 @@
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/jquery.dataTables.js"></script>
 	<script src="bootstrap/js/DT_bootstrap.js"></script>
-	<script src="morris/third_party/jquery-1.8.2.min.js"></script>
-	<script src="morris/third_party/raphael-2.1.0.min.js"></script>
-	<script src="morris/morris.js"></script>
-	<script src="morris/lib/prettify.js"></script>
-	<script src="morris/lib/example.js"></script>
+	<! -- 자바 데이터 테이블이 동작하지 않음 -->
+	<! -- <script src="bootstrap/third_party/jquery-1.8.2.min.js"></script> -->
+	<script src="bootstrap/third_party/raphael-2.1.0.min.js"></script>
+	<script src="bootstrap/js/morris.js"></script>
+	<script src="bootstrap/js/prettify.js"></script>
+	<script src="bootstrap/js/example.js"></script>
 
 </body></html>

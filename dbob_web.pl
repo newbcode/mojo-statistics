@@ -34,6 +34,21 @@ get '/' => sub {
 
 get '/graph' => sub {
     my $self = shift;
+
+    my $sth = $DBH->prepare(qq{ SELECT id, menu, cnt FROM menu_cnt });
+    $sth->execute();
+
+    my %menus;
+    while ( my @row = $sth->fetchrow_array ) {
+        my ( $id, $menu, $score ) = @row;
+
+        $menus{$id} = {
+            menu    =>  $menu,
+            score   =>  $score,
+        };
+    }
+
+    $self->stash( menus => \%menus );
     
 } => 'graph';
 
@@ -56,5 +71,6 @@ get '/table' => sub {
     $self->stash( menus => \%menus );
     
 } => 'table';
+
 
 app->start;

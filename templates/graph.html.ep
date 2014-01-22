@@ -1,181 +1,39 @@
 <!DOCTYPE HTML>
-% title 'stlish';
+% layout 'index';
+% title 'BOB Graph';
 
+<div class="container"><!-- MARKETING LINE-->
+	<p class="lead ">
+	Daum 밥 반찬 그래프
+	</p>
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<title>DBOB-Graph</title>
-
-	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<script src="morris/third_party/jquery-1.8.2.min.js"></script>
-	<script src="morris/third_party/raphael-2.1.0.min.js"></script>
-	<script src="morris/morris.js"></script>
-	<script src="morris/lib/prettify.js"></script>
-	<script src="morris/lib/example.js"></script>
-
-	<!-- Add custom CSS here -->
-	<link href="css/stylish-portfolio.css" rel="stylesheet">
-	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="morris/lib/example.css">
-	<link rel="stylesheet" href="morris/lib/prettify.css">
-	<link rel="stylesheet" href="morris/morris.css">
-
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+<meta charset=utf-8 />
+<title>Morris.js Bar Chart Example</title>
 </head>
-
 <body>
-	<!-- Side Menu -->
-	<a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-	<div id="sidebar-wrapper">
-		<ul class="sidebar-nav">
-			<a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-			<li class="sidebar-brand"><a href="http://startbootstrap.com">Daum BOB</a>
-			</li>
-			<li><a href="#top">Home</a>
-			</li>
-			<li><a href="#about">About</a>
-			</li>
-			<li><a href="#services">Services</a>
-			</li>
-			<li><a href="#portfolio">Portfolio</a>
-			</li>
-			<li><a href="#contact">Contact</a>
-			</li>
-		</ul>
-	</div>
-	<!-- /Side Menu -->
+  <div id="bar-example"></div>
+<script type = text/javascript>
+Morris.Bar({
+  element: 'bar-example',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
+});
+</script>
+</div>
+</body>
+</html>
 
-	<!-- Full Page Image Header Area -->
-	<div id="top" class="header">
-		<div class="vert-text">
-			<h2>밥 반찬 통계 그래프</h2>
-				</div>
-	</div>
-	<!-- /Full Page Image Header Area -->
-	<div id="graph"></div>
-			<pre id="code" class="prettyprint linenums">
-			<script type="text/javascript">
-			// Use Morris.Bar
-			Morris.Bar({
-			element: 'graph',
-			data: [
-			{x: '2011 Q1', y: 0},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q2', y: 1},
-			{x: '2011 Q3', y: 2},
-			{x: '2011 Q4', y: 3},
-			{x: '2012 Q1', y: 4},
-			{x: '2012 Q2', y: 5},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q3', y: 6},
-			{x: '2012 Q4', y: 7},
-			{x: '2013 Q1', y: 8}
-			],
-			xkey: 'x',
-			ykeys: ['y'],
-			labels: ['Y'],
-			barColors: function (row, series, type) {
-			if (type === 'bar') {
-			var red = Math.ceil(255 * row.y / this.ymax);
-			return 'rgb(' + red + ',0,0)';
-			}
-			else {
-			return '#000';
-			}
-			}
-			});
-			</script>
-			</pre>
-
-
-			<!-- Footer -->
-			<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center">
-						<ul class="list-inline">
-							<li><i class="fa fa-facebook fa-3x"></i>
-							</li>
-							<li><i class="fa fa-twitter fa-3x"></i>
-							</li>
-							<li><i class="fa fa-dribbble fa-3x"></i>
-							</li>
-						</ul>
-						<div class="top-scroll">
-							<a href="#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
-						</div>
-						<hr>
-						<p>Copyright &copy; Company 2013</p>
-					</div>
-				</div>
-			</div>
-			</footer>
-			<!-- /Footer -->
-
-			<!-- JavaScript -->
-			<script src="js/jquery-1.10.2.js"></script>
-			<script src="js/bootstrap.js"></script>
-
-			<!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
-			<script>
-				$("#menu-close").click(function(e) {
-					e.preventDefault();
-					$("#sidebar-wrapper").toggleClass("active");
-				});
-			</script>
-			<script>
-				$("#menu-toggle").click(function(e) {
-					e.preventDefault();
-					$("#sidebar-wrapper").toggleClass("active");
-				});
-			</script>
-			<script>
-				$(function() {
-					$('a[href*=#]:not([href=#])').click(function() {
-						if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-							var target = $(this.hash);
-							target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-							if (target.length) {
-								$('html,body').animate({
-									scrollTop: target.offset().top
-								}, 1000);
-								return false;
-							}
-						}
-					});
-				});
-			</script>
-
-		</body>
-
-	</html>
