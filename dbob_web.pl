@@ -16,9 +16,9 @@ plugin 'PODRenderer';
 my $config = plugin 'Config';
 
 my $DBH = DBI->connect (
-    'dbi:mysql:Advpop',
-    "$ENV{ADV_DB_ID}",
-    "$ENV{ADV_DB_PW}",
+    'dbi:mysql:dbob',
+    "$ENV{DB_ID}",
+    "$ENV{DB_PW}",
     {
         RaiseError        => 1,
         AutoCommit        => 1,
@@ -26,10 +26,6 @@ my $DBH = DBI->connect (
         mysql_auto_reconnect => 1,
     },
 );
-
-my $sth = $DBH->prepare(qq{ SELECT id, author, title, url, abst, likesum, wdate FROM adv_2010 });
-$sth->execute();
-my @row = $sth->fetchrow_array;
 
 get '/' => sub {
     my $self = shift;
@@ -43,6 +39,21 @@ get '/graph' => sub {
 
 get '/table' => sub {
     my $self = shift;
+
+    my $sth = $DBH->prepare(qq{ SELECT id, menu, cnt FROM menu_cnt });
+    $sth->execute();
+
+    my %menus;
+    while ( my @row = $sth->fetchrow_array ) {
+        my ( $id, $menu, $score ) = @row;
+
+        $menus{$id} = {
+            menu    =>  $menu,
+            score   =>  $score,
+        };
+    }
+
+    $self->stash( menus => \%menus );
     
 } => 'table';
 
