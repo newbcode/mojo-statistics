@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<%= $self->config->{app}->{description} %>">
 	<meta name="author" content="<%= $self->config->{app}->{author} %>">
 
@@ -28,7 +26,8 @@
 			<h2> <em>밥</em> 먹고 합시다. </h2>
 			<a href="/graph" class="btn btn-default btn-lg">밥 반찬 통계(그래프)</a>
 			<a href="/table" class="btn btn-success btn-lg">밥 반찬 검색(테이블)</a>
-			<a href="/table" class="btn btn-primary btn-lg">트위터 팔로우</a>
+			<a href="https://twitter.com/dbobbobbob" class="btn btn-primary" data-show-count="false" data-lang="en" data-size="large">트위터 팔로우</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 	</div>
 	<p>Copyright &copy; newbcode | Daum</p>
