@@ -72,5 +72,9 @@ get '/table' => sub {
     
 } => 'table';
 
+get '/misskang' => sub {
+    my $self = shift;
+    
+} => 'misskang';
 
 app->start;

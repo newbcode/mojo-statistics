@@ -28,6 +28,7 @@
 			<a href="/table" class="btn btn-success btn-lg">밥 반찬 검색(테이블)</a>
 			<a href="https://twitter.com/dbobbobbob" class="btn btn-primary" data-show-count="false" data-lang="en" data-size="large">트위터 팔로우</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<a href="/misskang" class="btn btn-warning btn-lg">마이피플 봇(Misskang)</a>
 		</div>
 	</div>
 	<p>Copyright &copy; newbcode | Daum</p>
